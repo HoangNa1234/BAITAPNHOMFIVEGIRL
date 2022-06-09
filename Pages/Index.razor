@@ -1,0 +1,53 @@
+﻿@page "/"
+
+
+    <SfChart Title="SẢN PHẨM BÁN CHẠY TRONG NĂM 2022">
+        <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"
+         Title="Months">
+        </ChartPrimaryXAxis>
+        <ChartPrimaryYAxis Title="Số lượng (cái)">
+        </ChartPrimaryYAxis>
+        <ChartLegendSettings Visible="true"> </ChartLegendSettings>
+        <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+        <ChartSeriesCollection>
+            <ChartSeries Type="ChartSeriesType.Column" DataSource="@Sales"
+              XName="Month" YName="SalesValue" Name="Số lượng">
+                <ChartMarker>
+                    <ChartDataLabel Visible="true"> </ChartDataLabel>
+                </ChartMarker>
+            </ChartSeries>
+        </ChartSeriesCollection>
+    </SfChart>
+    <SfButton Content="@ButtonContent"></SfButton>
+    <h1> Chọn tháng bạn muốn hiển thị </h1>
+
+    <SfCalendar TValue="DateTime?"></SfCalendar>
+    
+    
+
+@code {
+    public string ButtonContent = "HIỂN THỊ";
+    public class SalesData
+    {
+        public string Month { get; set; }
+        public double SalesValue { get; set; }
+    }
+
+    public List<SalesData> Sales = new List<SalesData> 
+    {
+        new SalesData { Month = "Áo sơ mi", SalesValue =235 },
+        new SalesData { Month = "Áo thun", SalesValue = 228 },
+        new SalesData { Month = "Áo blazer", SalesValue = 134 },
+        new SalesData { Month = "Áo khoác nắng", SalesValue = 532 },
+        new SalesData { Month = "Quần Tây", SalesValue = 150 },
+        new SalesData { Month = "Quần Jeans", SalesValue = 332 },
+        new SalesData { Month = "Quần suông", SalesValue = 535 },
+        new SalesData { Month = "Chân váy", SalesValue = 545 },
+        new SalesData { Month = "Áo đầm", SalesValue = 328 },
+        new SalesData { Month = "Áo xô kiểu", SalesValue = 100 },
+        new SalesData { Month = "Túi xách", SalesValue = 68},
+        new SalesData { Month = "Phụ kiện", SalesValue = 50 },
+        new SalesData { Month = "Khác...", SalesValue = 50 }
+
+    };
+}

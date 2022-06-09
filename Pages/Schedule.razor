@@ -1,0 +1,13 @@
+﻿@page "/schedule"
+<SfSchedule TValue ="Object" 
+SelectedDate="@(new DateTime(2022, 1, 6))" 
+CurrentView="View.Month" 
+StartHour="07:00" 
+EndHour="17:00" 
+ShowWeekend="false">
+    <ScheduleViews>
+        <ScheduleView Option="View.Day" StartHour="07:00" EndHour="17:00"></ScheduleView>
+        <ScheduleView Option="View.Week" StartHour="10:00" EndHour="18:00"></ScheduleView>
+        <ScheduleView Option="View.Month" ShowWeekend="false"></ScheduleView>
+    </ScheduleViews>
+</SfSchedule>
